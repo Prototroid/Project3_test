@@ -107,12 +107,12 @@ public class MuffinMan_EnemyAI : MovingObject
         float deltaX = target.x - current.x;
         float deltaY = target.y - current.y;
 
-        if (current.x > (target.x +) && (Math.Abs(deltaX) > Math.Abs(deltaY)))
+        if (current.x > (target.x + 1) && (Math.Abs(deltaX) > Math.Abs(deltaY)))
         {
             //animator.SetTrigger("MuffinManLeft");
             animator.Play("MuffinManLeft");
         }
-        else if (current.x < target.x && (Math.Abs(deltaX) > Math.Abs(deltaY)))
+        else if (current.x < (target.x - 1) && (Math.Abs(deltaX) > Math.Abs(deltaY)))
         {
             //animator.SetTrigger("MuffinManRight");
             animator.Play("MuffinManRight");
