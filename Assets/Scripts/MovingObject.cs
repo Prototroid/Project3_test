@@ -27,7 +27,6 @@ public abstract class MovingObject : MonoBehaviour
         inverseMoveTime = 1f / moveTime;
     }
 
-
     //Move returns true if it is able to move and false if not. 
     //Move takes parameters for x direction, y direction and a RaycastHit2D to check collision.
     protected bool Move(float xDir,float yDir, out RaycastHit2D hit)
@@ -37,6 +36,7 @@ public abstract class MovingObject : MonoBehaviour
 
         // Calculate end position based on the direction parameters passed in when calling Move.
         Vector2 end = start + new Vector2(xDir, yDir);
+        //Vector2 end = new Vector2(xDir, yDir);
 
         //Disable the boxCollider so that linecast doesn't hit this object's own collider.
         boxCollider.enabled = false;

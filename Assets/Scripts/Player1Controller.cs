@@ -25,8 +25,8 @@ public class Player1Controller : MonoBehaviour
         animator = GetComponent<Animator>();
         
         //current = gameObject.transform.position;
-        Debug.Log(animator);
-        Debug.Log(myPlayer);
+        //Debug.Log(animator);
+        //Debug.Log(myPlayer);
     }
 
     //float playerDelta(float a, float b)
@@ -41,7 +41,7 @@ public class Player1Controller : MonoBehaviour
         //Debug.Log(isAttacking);
         if (move == Vector2.zero)
         {
-            myPlayer.AddForce(-myPlayer.velocity);
+            //myPlayer.AddForce(-myPlayer.velocity);
         }
         else
         {
@@ -81,6 +81,7 @@ public class Player1Controller : MonoBehaviour
         {
             animator.SetTrigger("Player1Idle");
             //animator.Play("Player1Idle");
+            myPlayer.velocity = Vector3.zero;
         }
 
         //float moveVertical = Input.GetAxis("Vertical");

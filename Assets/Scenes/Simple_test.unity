@@ -136,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 498207602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.024, y: -0.008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1401545445}
@@ -735,15 +735,15 @@ GameObject:
   m_Component:
   - component: {fileID: 1823324039}
   - component: {fileID: 1823324038}
+  - component: {fileID: 1823324032}
   - component: {fileID: 1823324035}
   - component: {fileID: 1823324036}
-  - component: {fileID: 1823324040}
-  - component: {fileID: 1823324032}
-  - component: {fileID: 1823324034}
   - component: {fileID: 1823324033}
   - component: {fileID: 1823324041}
   - component: {fileID: 1823324037}
-  m_Layer: 8
+  - component: {fileID: 1823324034}
+  - component: {fileID: 1823324040}
+  m_Layer: 0
   m_Name: MuffinMan
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -783,13 +783,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   speed: 1
+  deltaX: 0
+  deltaY: 0
+  current: {x: 0, y: 0, z: 0}
+  target: {x: 0, y: 0, z: 0}
+  startMoving: 0
 --- !u!195 &1823324034
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1823324031}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 10
@@ -823,17 +828,17 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1823324036
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1823324031}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -915,8 +920,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1823324031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 2, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalPosition: {x: -20, y: 2, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -981,12 +986,13 @@ GameObject:
   - component: {fileID: 1910021852}
   - component: {fileID: 1910021850}
   - component: {fileID: 1910021851}
+  - component: {fileID: 1910021859}
   - component: {fileID: 1910021854}
-  - component: {fileID: 1910021856}
   - component: {fileID: 1910021849}
   - component: {fileID: 1910021858}
   - component: {fileID: 1910021855}
-  m_Layer: 8
+  - component: {fileID: 1910021856}
+  m_Layer: 0
   m_Name: Player1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1025,14 +1031,14 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 2
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1910021851
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1152,7 +1158,7 @@ NavMeshAgent:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1910021848}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -1175,7 +1181,7 @@ RectTransform:
   m_GameObject: {fileID: 1910021848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1221,3 +1227,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1910021859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1910021848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8634e062924929664361c08745211fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: 4
+  target: {fileID: 0}
+  source: {fileID: 1823324031}
+  triggerCount: 1
+  repeatTrigger: 0
